@@ -1,14 +1,13 @@
+import http.client
+http.client.HTTPConnection.debuglevel = 1
+
+import logging
+logging.basicConfig(level=logging.DEBUG)
+
 import fastf1
+fastf1.set_log_level("DEBUG")
 
-print("1. Starting...")
+fastf1.Cache.enable_cache("data_cache")
 
-# Pass 'French Grand Prix' instead of '7'
-session = fastf1.get_session(2021, 7, 'Q', backend='fastf1')
-
-
-print("2. Session object initialized!")
-#print("Event Name:", session.event['EventName'])
-#print("Session Name:", session.name)
-#print("Session Date:", session.date)
-
-print("3. Done!")
+session = fastf1.get_session(2025, "Silverstone", "R")
+session.load()
