@@ -1,13 +1,11 @@
-import http.client
-http.client.HTTPConnection.debuglevel = 1
-
-import logging
-logging.basicConfig(level=logging.DEBUG)
-
 import fastf1
-fastf1.set_log_level("DEBUG")
 
-fastf1.Cache.enable_cache("data_cache")
+print("Before")
 
-session = fastf1.get_session(2025, "Silverstone", "R")
-session.load()
+schedule = fastf1.get_event_schedule(2025)
+
+print("After")
+print(schedule.head(10))
+
+session = fastf1.get_session(2021, 7, 'Q')
+print(session.event)
