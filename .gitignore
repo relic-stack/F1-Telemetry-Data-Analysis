@@ -1,3 +1,5 @@
 
-venv/
-.venv/
+fastf1-env/
+.fastf1-env/
+
+
