@@ -2,6 +2,10 @@ import fastf1
 import os
 
 
+# Set log level to warning (Order: DEBUG, INFO, WARNING, ERROR and CRITICAL)
+fastf1.set_log_level('WARNING')
+
+
 # Create Directory to store fastf1 cache
 dir_cache= "data_cache"
 try:
@@ -18,7 +22,6 @@ except Exception:
 
 # Enable caching to specified data_cache folder
 fastf1.Cache.enable_cache('data_cache')
-
 
 
 # Session Loader Function
