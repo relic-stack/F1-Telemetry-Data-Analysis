@@ -20,3 +20,12 @@ except Exception:
 fastf1.Cache.enable_cache('data_cache')
 
 
+
+# Session Loader Function
+def load_session(year, event, session_type):
+    session = fastf1.get_session(year, event, session_type)
+    session.load()
+    return session.results.columns, session.results
+
+example_session = load_session(2021, 7, 'Q')
+print(example_session)
