@@ -9,6 +9,7 @@ try:
     print("Directory", dir_cache, "created successfully." )
 except FileExistsError:
     print("Directory", dir_cache, "already exists.")
+    # pass (uncomment to remove print statement)
 except PermissionError:
     print("Permission Denied: Unable to create", dir_cache, ".")
 except Exception:
